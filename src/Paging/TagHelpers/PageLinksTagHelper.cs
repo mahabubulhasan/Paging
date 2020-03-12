@@ -48,6 +48,9 @@ namespace Uzzal.Paging.TagHelpers
         public string Action { get; set; }
         public string Controller { get; set; }
 
+        public string DefaultStyle { get; set; } = "mr-1 btn btn-outline-primary btn-default btn-sm";
+        public string ActiveStyle { get; set; } = "font-weight-bold";
+
         public PagingContext PagingContext { get; set; }
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
@@ -73,7 +76,7 @@ namespace Uzzal.Paging.TagHelpers
                     html.AppendHtml("<span>... </span>");
                 }
                 lastIndex = i;
-                var style = (PagingContext.PageIndex == i) ? " disabled font-weight-bold" : "";
+                var style = (PagingContext.PageIndex == i) ? $" disabled {ActiveStyle}" : "";
                 var anchor = Anchor(i.ToString(), i.ToString(), false, style);
                 html.AppendHtml(anchor);
             }
@@ -97,7 +100,7 @@ namespace Uzzal.Paging.TagHelpers
                 controllerName: Controller,
                 fragment: null,
                 hostname: null,
-                htmlAttributes: new Dictionary<string, object> { { "class", $"mr-1 btn btn-outline-primary btn-default btn-sm{disabledStyle}{style}" } },
+                htmlAttributes: new Dictionary<string, object> { { "class", $"{DefaultStyle}{disabledStyle}{style}" } },
                 protocol: null,
                 routeValues: routeValues
             );
