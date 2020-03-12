@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Paging
+namespace Uzzal.Paging
 {
     public class PageLinks
     {

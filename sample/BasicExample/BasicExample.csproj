@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Paging\Paging.csproj" />
+    <ProjectReference Include="..\..\src\Paging\Uzzal.Paging.csproj" />
   </ItemGroup>
 
 

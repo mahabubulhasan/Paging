@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BasicExample.Models;
-using Paging;
+using Uzzal.Paging;
 
 #nullable enable
 

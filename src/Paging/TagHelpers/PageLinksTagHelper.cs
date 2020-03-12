@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Routing;
 using System;
 using System.Collections.Generic;
 
-namespace Paging.TagHelpers
+namespace Uzzal.Paging.TagHelpers
 {
     public class PageLinksTagHelper : TagHelper
     {

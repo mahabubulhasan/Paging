@@ -10,6 +10,9 @@
     <RepositoryUrl>https://github.com/mahabubulhasan/Paging.git</RepositoryUrl>
     <PackageId>Uzzal.Paging</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

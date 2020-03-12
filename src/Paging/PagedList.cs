@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Paging
+namespace Uzzal.Paging
 {
     public class PagedList<T> : List<T>
     {
