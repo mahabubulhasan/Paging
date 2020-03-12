@@ -4,8 +4,12 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Mahabubul Hasan</Authors>
     <Description>Basic pagination library any kinds of collection</Description>
-    <PackageTags>pagination</PackageTags>
+    <PackageTags>pagination, asp.net core</PackageTags>
     <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/mahabubulhasan/Paging</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mahabubulhasan/Paging.git</RepositoryUrl>
+    <PackageId>Uzzal.Paging</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
