@@ -18,8 +18,8 @@ public IActionResult Index(int? page)
 {
     var itemsPerPage = 10;
     var list = GetExampleList();
+    
     var pagedList = PagedList<string>.Build(list, page ?? 1, itemsPerPage);
-
     return View(pagedList);
 }
 
