@@ -7,7 +7,7 @@ NuGet Url https://www.nuget.org/packages/Uzzal.Paging
 
 ## Installation
 ```
-Install-Package Uzzal.Paging -Version 1.0.0
+Install-Package Uzzal.Paging -Version 1.0.1
 ```
 
 After successful installation follow these three steps
