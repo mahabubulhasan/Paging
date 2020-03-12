@@ -35,8 +35,8 @@ private List<string> GetExampleList()
 ```
 > Step 2: Add these lines into your `View/_ViewImports.cshtml` file
 ```
-@using Paging
-@addTagHelper *, Paging
+@using Uzzal.Paging
+@addTagHelper *, Uzzal.Paging
 ```
 
 > Step 3: In Razor view file
