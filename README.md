@@ -51,4 +51,4 @@ private List<string> GetExampleList()
     action="Index">
 </page-links>
 ```
-
+**NOTE:** Paging depends on bootstrap 4 for styling.
