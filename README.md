@@ -1,13 +1,13 @@
 # Paging
 Basic pagination library for asp.net
 
-![Screenshot of Paging](./screenshot/paging.png)
+![Screenshot of Paging](https://raw.githubusercontent.com/mahabubulhasan/Paging/master/screenshot/paging.png)
 
 NuGet Url https://www.nuget.org/packages/Uzzal.Paging
 
 ## Installation
 ```
-Install-Package Uzzal.Paging -Version 1.0.0
+Install-Package Uzzal.Paging -Version 1.0.1
 ```
 
 After successful installation follow these three steps
