@@ -1,0 +1,13 @@
+﻿@model PagedList<string>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Pagination</h1>
+        
+        <page-links paging-context="@Model.GetContext()"
+                    asp-route-hello="world"
+                    action="Index">
+        </page-links>
+    </div>
