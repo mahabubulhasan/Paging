@@ -17,7 +17,8 @@ After successful installation follow these three steps
 public IActionResult Index(int? page)
 {
     var itemsPerPage = 10;
-    var pagedList = PagedList<string>.Build(GetExampleList(), page ?? 1, itemsPerPage);
+    var list = GetExampleList();
+    var pagedList = PagedList<string>.Build(list, page ?? 1, itemsPerPage);
 
     return View(pagedList);
 }
