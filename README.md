@@ -37,7 +37,7 @@ public async IActionResult Index(int? page)
     var itemsPerPage = 10;
     var list = GetRows(); // returns IQueryable<TEntity>
     
-    var pagedList = await PagedList<string>.BuildAsync(list, page ?? 1, itemsPerPage);
+    var pagedList = await PagedList<TEntity>.BuildAsync(list, page ?? 1, itemsPerPage);
     return View(pagedList);
 }
 
