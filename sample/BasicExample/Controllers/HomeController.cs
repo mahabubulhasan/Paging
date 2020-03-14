@@ -23,9 +23,11 @@ namespace BasicExample.Controllers
 
         public IActionResult Index(int? page)
         {
-            var pagedList = PagedList<string>.Build(GetExampleList(), page ?? 1, 10);
+            var list = GetExampleList();
+            var pagedList1 = PagedList<string>.Build(list, page ?? 1, 10);
+            var pagedList2 = list.ToPagedList<string>(page ?? 1, 10);
 
-            return View(pagedList);
+            return View(pagedList2);
         }
 
         private List<string> GetExampleList()

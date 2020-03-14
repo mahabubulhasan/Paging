@@ -64,4 +64,13 @@ namespace Uzzal.Paging
         public bool HasPrevious { get; set; }
         public PageLinks PageLinks { get; set; }
     }
+
+    public static class Extensions
+    {
+        public static PagedList<T> ToPagedList<T>(this ICollection<T> source, int pageIndex, int itemsPerPage) 
+            => PagedList<T>.Build(source, pageIndex, itemsPerPage);
+
+        public static Task<PagedList<T>> ToPagedListAsync<T>(this IQueryable<T> source, int pageIndex, int itemsPerPage)
+            => PagedList<T>.BuildAsync(source, pageIndex, itemsPerPage);
+    }
 }
