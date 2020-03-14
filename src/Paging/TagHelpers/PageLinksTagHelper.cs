@@ -47,7 +47,8 @@ namespace Uzzal.Paging.TagHelpers
 
         public string Action { get; set; }
         public string Controller { get; set; }
-
+        public string SpacerText { get; set; } = "...";
+        public string SpacerStyle { get; set; } = "p-0 mr-1 btn btn-default btn-sm";
         public string DefaultStyle { get; set; } = "mr-1 btn btn-outline-primary btn-default btn-sm";
         public string ActiveStyle { get; set; } = "font-weight-bold";
 
@@ -73,7 +74,7 @@ namespace Uzzal.Paging.TagHelpers
             {
                 if (i - lastIndex > 1)
                 {
-                    html.AppendHtml("<span>... </span>");
+                    html.AppendHtml($"<a class=\"disabled {SpacerStyle}\">{SpacerText}</>");
                 }
                 lastIndex = i;
                 var style = (PagingContext.PageIndex == i) ? $" disabled {ActiveStyle}" : "";
