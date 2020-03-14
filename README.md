@@ -29,7 +29,7 @@ private ICollection<string> GetCollection()
 }
 ```
 
-# OR
+### OR
 
 ```C#
 public async IActionResult Index(int? page)
