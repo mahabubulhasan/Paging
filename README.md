@@ -1,5 +1,5 @@
 # Paging
-Basic pagination library for asp.net
+Basic pagination library for asp.net core
 
 ![Screenshot of Paging](https://raw.githubusercontent.com/mahabubulhasan/Paging/master/screenshot/paging.png)
 
