@@ -7,7 +7,7 @@ NuGet Url https://www.nuget.org/packages/Uzzal.Paging
 
 ## Installation
 ```
-Install-Package Uzzal.Paging -Version 1.0.1
+Install-Package Uzzal.Paging -Version 1.0.2
 ```
 
 After successful installation follow these three steps
@@ -52,3 +52,17 @@ private List<string> GetExampleList()
 </page-links>
 ```
 **NOTE:** Paging depends on bootstrap 4 for styling.
+
+> Additionally some supported optional attributes are followings:
+
+| Attribute Name | Default Value |
+|----------------|---------------|
+| `controller`      |  Current controller  |
+| `default-style`   | `mr-1 btn btn-outline-primary btn-sm` |
+| `active-style`    | `mr-1 btn btn-primary btn-sm` |
+| `spacer-text`     | `...` |
+| `spacer-style`    | `p-0 mr-1 btn btn-default btn-sm` |
+
+
+
+
