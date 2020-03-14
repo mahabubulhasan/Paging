@@ -55,15 +55,15 @@ namespace Uzzal.Paging
             }
 
             // special first (1, 2, 3, 4, 5...10)
-            if(start==1 && Total >= Span)
+            if (start == 1 && Total >= Span)
             {
                 limit = Span;
             }
 
             // special last (1...6, 7, 8, 9, 10)
-            if(Current > (Total - PostSpan))
+            if (Current > (Total - PostSpan))
             {
-                start = (Total - Span)+1;
+                start = (Total - Span) + 1;
             }
 
             return (start, limit);
