@@ -28,6 +28,19 @@ namespace Uzzal.Paging
                 return spanLinks;
             }
 
+            var (start, limit) = GetRange();
+
+            spanLinks.Add(1);
+            for (int i = start; i <= limit; i++)
+            {
+                spanLinks.Add(i);
+            }
+            spanLinks.Add(Total);
+            return spanLinks;
+        }
+
+        public (int, int) GetRange()
+        {
             int start = Current - PreSpan + 1;
             int limit = Current + PostSpan;
 
@@ -40,13 +53,20 @@ namespace Uzzal.Paging
             {
                 limit = Total;
             }
-            spanLinks.Add(1);
-            for (int i = start; i <= limit; i++)
+
+            // special first (1, 2, 3, 4, 5...10)
+            if(start==1 && Total >= Span)
             {
-                spanLinks.Add(i);
+                limit = Span;
             }
-            spanLinks.Add(Total);
-            return spanLinks;
+
+            // special last (1...6, 7, 8, 9, 10)
+            if(Current > (Total - PostSpan))
+            {
+                start = (Total - Span)+1;
+            }
+
+            return (start, limit);
         }
     }
 }
