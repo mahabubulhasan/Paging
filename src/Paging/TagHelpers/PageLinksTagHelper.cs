@@ -49,8 +49,8 @@ namespace Uzzal.Paging.TagHelpers
         public string Controller { get; set; }
         public string SpacerText { get; set; } = "...";
         public string SpacerStyle { get; set; } = "p-0 mr-1 btn btn-default btn-sm";
-        public string DefaultStyle { get; set; } = "mr-1 btn btn-outline-primary btn-default btn-sm";
-        public string ActiveStyle { get; set; } = "font-weight-bold";
+        public string DefaultStyle { get; set; } = "mr-1 btn btn-outline-primary btn-sm";
+        public string ActiveStyle { get; set; } = "mr-1 btn btn-primary btn-sm";
 
         public PagingContext PagingContext { get; set; }
 
@@ -58,9 +58,9 @@ namespace Uzzal.Paging.TagHelpers
         {
             var builder = new HtmlContentBuilder();
 
-            builder.AppendHtml(Anchor("Previous", (PagingContext.PageIndex - 1).ToString(), !PagingContext.HasPrevious));
+            builder.AppendHtml(Anchor("Previous", (PagingContext.PageIndex - 1).ToString(), !PagingContext.HasPrevious, DefaultStyle));
             builder = GenerateSpan(builder);
-            builder.AppendHtml(Anchor("Next", (PagingContext.PageIndex + 1).ToString(), !PagingContext.HasNext));
+            builder.AppendHtml(Anchor("Next", (PagingContext.PageIndex + 1).ToString(), !PagingContext.HasNext, DefaultStyle));
 
 
             output.TagName = "div";
@@ -77,7 +77,7 @@ namespace Uzzal.Paging.TagHelpers
                     html.AppendHtml($"<a class=\"disabled {SpacerStyle}\">{SpacerText}</>");
                 }
                 lastIndex = i;
-                var style = (PagingContext.PageIndex == i) ? $" disabled {ActiveStyle}" : "";
+                var style = (PagingContext.PageIndex == i) ? $" disabled {ActiveStyle}" : DefaultStyle;
                 var anchor = Anchor(i.ToString(), i.ToString(), false, style);
                 html.AppendHtml(anchor);
             }
@@ -92,7 +92,7 @@ namespace Uzzal.Paging.TagHelpers
                 { "page", page }
             };
 
-            var disabledStyle = disable ? " disabled" : "";
+            var disabledStyle = disable ? "disabled " : "";
 
             return htmlGenerator.GenerateActionLink(
                 ViewContext,
@@ -101,7 +101,7 @@ namespace Uzzal.Paging.TagHelpers
                 controllerName: Controller,
                 fragment: null,
                 hostname: null,
-                htmlAttributes: new Dictionary<string, object> { { "class", $"{DefaultStyle}{disabledStyle}{style}" } },
+                htmlAttributes: new Dictionary<string, object> { { "class", $"{disabledStyle}{style}" } },
                 protocol: null,
                 routeValues: routeValues
             );
