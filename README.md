@@ -55,6 +55,8 @@ private IQueryable<TEntity> GetRows()
 > Step 3: In Razor view file
 ```C#
 @model PagedList<string>
+// OR
+@model PagedList<TEntity>
 
 <page-links 
     paging-context="@Model.GetContext()"
