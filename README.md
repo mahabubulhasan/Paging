@@ -20,6 +20,9 @@ public IActionResult Index(int? page)
     var list = GetCollection(); // returns ICollection<string>
     
     var pagedList = PagedList<string>.Build(list, page ?? 1, itemsPerPage);
+    // or
+    var pagedList = list.ToPagedList<string>(page ?? 1, itemsPerPage);
+    
     return View(pagedList);
 }
 
@@ -38,6 +41,9 @@ public async IActionResult Index(int? page)
     var list = GetRows(); // returns IQueryable<TEntity>
     
     var pagedList = await PagedList<TEntity>.BuildAsync(list, page ?? 1, itemsPerPage);
+    // or
+    var pagedList = await list.ToPagedListAsync<TEntity>(page ?? 1, itemsPerPage);
+    
     return View(pagedList);
 }
 
