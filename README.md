@@ -17,20 +17,33 @@ After successful installation follow these three steps
 public IActionResult Index(int? page)
 {
     var itemsPerPage = 10;
-    var list = GetExampleList();
+    var list = GetCollection(); // returns ICollection<string>
     
     var pagedList = PagedList<string>.Build(list, page ?? 1, itemsPerPage);
     return View(pagedList);
 }
 
-private List<string> GetExampleList()
+private ICollection<string> GetCollection()
 {
-    var list = new List<string>();
-    for(int i=0; i< 300; i++)
-    {
-        list.Add($"Item: {i}");
-    }
-    return list;
+    ...
+}
+```
+
+# OR
+
+```C#
+public async IActionResult Index(int? page)
+{
+    var itemsPerPage = 10;
+    var list = GetRows(); // returns IQueryable<TEntity>
+    
+    var pagedList = await PagedList<string>.BuildAsync(list, page ?? 1, itemsPerPage);
+    return View(pagedList);
+}
+
+private IQueryable<TEntity> GetRows() 
+{
+    ....
 }
 ```
 > Step 2: Add these lines into your `View/_ViewImports.cshtml` file
