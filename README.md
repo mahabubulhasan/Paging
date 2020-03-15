@@ -24,10 +24,7 @@ public IActionResult Index(int? page)
     return View(pagedList);
 }
 
-private ICollection<string> GetCollection()
-{
-    ...
-}
+private ICollection<string> GetCollection() {...}
 ```
 
 ### OR
@@ -43,10 +40,7 @@ public async IActionResult Index(int? page)
     return View(pagedList);
 }
 
-private IQueryable<TEntity> GetRows() 
-{
-    ....
-}
+private IQueryable<TEntity> GetRows() {...}
 ```
 > Step 2: Add these lines into your `View/_ViewImports.cshtml` file
 ```
