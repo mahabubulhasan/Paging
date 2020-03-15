@@ -30,7 +30,7 @@ private ICollection<string> GetCollection() {...}
 ### OR
 
 ```C#
-public async IActionResult Index(int? page)
+public async Task<IActionResult> Index(int? page)
 {
     var itemsPerPage = 10;
     var list = GetRows(); // returns IQueryable<TEntity>
