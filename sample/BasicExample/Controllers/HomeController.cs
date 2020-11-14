@@ -33,7 +33,7 @@ namespace BasicExample.Controllers
         private List<string> GetExampleList()
         {
             var list = new List<string>();
-            for(int i=0; i< 300; i++)
+            for(int i=0; i< 14; i++)
             {
                 list.Add($"Item: {i}");
             }

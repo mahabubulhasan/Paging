@@ -33,7 +33,10 @@ namespace Uzzal.Paging
             spanLinks.Add(1);
             for (int i = start; i <= limit; i++)
             {
-                spanLinks.Add(i);
+                if (i > 0)
+                {
+                    spanLinks.Add(i);
+                }
             }
             spanLinks.Add(Total);
             return spanLinks;

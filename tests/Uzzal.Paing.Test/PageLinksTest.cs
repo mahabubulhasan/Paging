@@ -47,6 +47,7 @@ namespace Uzzal.Paing.Test
             new object[] { 10, 5, 5, new HashSet<int> { 1, 3, 4, 5, 6, 7, 10} },
             new object[] { 3, 1, 5, new HashSet<int> { 1, 2, 3} },
             new object[] { 6, 1, 5, new HashSet<int> { 1, 2, 3, 4, 5, 6} },
+            new object[] { 14, 1, 5, new HashSet<int> { 1, 2, 3, 4, 5, 14} },
         };
 
         public static IEnumerable<object[]> RangeData =>
@@ -58,6 +59,7 @@ namespace Uzzal.Paing.Test
             new object[] { 10, 9, 5, (6, 10) },
             new object[] { 5, 1, 5, (1, 5) },
             new object[] { 5, 4, 3, (3, 5) },
+            new object[] { 14, 1, 5, (1, 5) },
         };
     }
 }
