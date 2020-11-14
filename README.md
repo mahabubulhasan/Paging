@@ -7,7 +7,7 @@ NuGet Url https://www.nuget.org/packages/Uzzal.Paging
 
 ## Installation
 ```
-Install-Package Uzzal.Paging -Version 1.0.2
+Install-Package Uzzal.Paging -Version 1.0.3
 ```
 
 After successful installation follow these three steps
@@ -19,32 +19,28 @@ public IActionResult Index(int? page)
     var itemsPerPage = 10;
     var list = GetCollection(); // returns ICollection<string>
     
-    var pagedList = PagedList<string>.Build(list, page ?? 1, itemsPerPage);
+    var pagedList = list.ToPagedList<string>(page ?? 1, itemsPerPage);
+    
     return View(pagedList);
 }
 
-private ICollection<string> GetCollection()
-{
-    ...
-}
+private ICollection<string> GetCollection() {...}
 ```
 
 ### OR
 
 ```C#
-public async IActionResult Index(int? page)
+public async Task<IActionResult> Index(int? page)
 {
     var itemsPerPage = 10;
     var list = GetRows(); // returns IQueryable<TEntity>
+   
+    var pagedList = await list.ToPagedListAsync<TEntity>(page ?? 1, itemsPerPage);
     
-    var pagedList = await PagedList<TEntity>.BuildAsync(list, page ?? 1, itemsPerPage);
     return View(pagedList);
 }
 
-private IQueryable<TEntity> GetRows() 
-{
-    ....
-}
+private IQueryable<TEntity> GetRows() {...}
 ```
 > Step 2: Add these lines into your `View/_ViewImports.cshtml` file
 ```
